@@ -1,0 +1,5 @@
+run/
+weights/
+__pycache__/ 
+.env/
+tp.config.toml

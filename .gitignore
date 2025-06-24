@@ -1,4 +1,5 @@
 run/
+runs/
 weights/
 __pycache__/ 
 .env/

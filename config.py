@@ -1,7 +1,7 @@
 from pathlib import Path
 def get_config():
     return {
-        "batch_size": 128,        # Reduced batch size due to longer sequences
+        "batch_size": 64,        # Reduced batch size due to longer sequences
         "num_epochs": 100,        
         "lr": 3e-4,             # Fixed: was 10-4 instead of 1e-4
         "seq_len": 512,         # Increased to accommodate longer sentences

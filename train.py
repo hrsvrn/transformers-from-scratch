@@ -5,7 +5,7 @@ import warnings
 import os
 import torchmetrics
 
-from dataset import BilingualDataset,casual_mask
+from dataset import BilingualDataset, causal_mask
 from model import build_transformer
 
 from datasets import load_dataset
@@ -31,9 +31,8 @@ def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_
     while True:
         if decoder_input.size(1) == max_len:
             break
-
-        # build mask for target
-        decoder_mask = casual_mask(decoder_input.size(1)).type_as(source_mask).to(device)
+        # build mask for target (boolean mask)
+        decoder_mask = causal_mask(decoder_input.size(1)).to(device)
 
         # calculate output
         out = model.decode(encoder_output, source_mask, decoder_input, decoder_mask)
@@ -47,7 +46,6 @@ def greedy_decode(model, source, source_mask, tokenizer_src, tokenizer_tgt, max_
 
         if next_word == eos_idx:
             break
-
     return decoder_input.squeeze(0)
 
 
@@ -90,7 +88,7 @@ def run_validation(model, validation_ds, tokenizer_src, tokenizer_tgt, max_len, 
         with os.popen('stty size', 'r') as console:
             _, console_width = console.read().split()
             console_width = int(console_width)
-    except:
+    except Exception:
         # If we can't get the console width, use 80 as default
         console_width = 80
 

@@ -6,8 +6,8 @@ def get_config():
         "lr": 1e-4,             # Fixed: was 10-4 instead of 1e-4
         "seq_len": 320,         # Increased to accommodate longer sentences
         "d_model": 128,         
-        "lang_src": "en",
-        "lang_tgt": "sv",
+    "lang_src": "en",
+    "lang_tgt": "fr",
         "model_folder": "weights",
         "model_basename": "tmodel_",
         "preload": None,

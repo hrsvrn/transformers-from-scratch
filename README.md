@@ -4,7 +4,7 @@ A PyTorch implementation of the Transformer architecture for neural machine tran
 
 ## Overview
 
-This project implements a complete Transformer model for translating between English and Swedish using the OPUS Books dataset. The implementation includes all core components: multi-head attention, positional encoding, encoder-decoder architecture, and training pipeline.
+This project implements a complete Transformer model for translating between English and French using the OPUS Books dataset. The implementation includes all core components: multi-head attention, positional encoding, encoder-decoder architecture, and training pipeline.
 
 ## Features
 
@@ -27,7 +27,7 @@ transformer/
 ├── config.py         # Configuration parameters
 ├── requirements.txt  # Python dependencies
 ├── tokenizer_en.json # English tokenizer (generated)
-├── tokenizer_sv.json # Swedish tokenizer (generated)
+├── tokenizer_fr.json # French tokenizer (generated)
 ├── weights/          # Model checkpoints directory
 └── runs/             # TensorBoard logs directory
 ```
@@ -61,7 +61,7 @@ python train.py
 ```
 
 The script will:
-- Download and prepare the OPUS Books English-Swedish dataset
+	- Download and prepare the OPUS Books English-French dataset
 - Build or load tokenizers for both languages
 - Train the Transformer model
 - Save checkpoints in the `weights/` directory
@@ -77,7 +77,7 @@ Modify `config.py` to adjust training parameters:
 - `seq_len`: Maximum sequence length (default: 320)
 - `d_model`: Model dimension (default: 128)
 - `lang_src`: Source language (default: "en")
-- `lang_tgt`: Target language (default: "sv")
+- `lang_tgt`: Target language (default: "fr")
 
 ### Monitoring Training
 
@@ -120,7 +120,7 @@ The model tracks several metrics during validation:
 
 ## Dataset
 
-Uses the OPUS Books dataset for English-Swedish translation:
+Uses the OPUS Books dataset for English-French translation:
 - Training: 90% of the dataset
 - Validation: 10% of the dataset
 - Tokenizers are trained on the dataset vocabulary

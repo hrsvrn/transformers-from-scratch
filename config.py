@@ -1,11 +1,11 @@
 from pathlib import Path
 def get_config():
     return {
-        "batch_size": 2,        # Reduced batch size due to longer sequences
-        "num_epochs": 5,        
-        "lr": 1e-4,             # Fixed: was 10-4 instead of 1e-4
-        "seq_len": 320,         # Increased to accommodate longer sentences
-        "d_model": 128,         
+        "batch_size": 128,        # Reduced batch size due to longer sequences
+        "num_epochs": 100,        
+        "lr": 3e-4,             # Fixed: was 10-4 instead of 1e-4
+        "seq_len": 512,         # Increased to accommodate longer sentences
+        "d_model": 1024,         
     "lang_src": "en",
     "lang_tgt": "fr",
         "model_folder": "weights",
